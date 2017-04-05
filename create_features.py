@@ -144,11 +144,6 @@ def extract_features_for_test_data(image, color_space='RGB', spatial_size=(32, 3
 
     return np.array(np.concatenate(file_features))
 
-
-def normalize(image_data):
-    return (image_data * 0.8) / 255. + 0.1
-
-
 def get_positive_sample(positive_data):
     print("getting positive sample")
     for img in tqdm(os.listdir(TRAIN_DIR1)):

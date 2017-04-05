@@ -72,8 +72,8 @@ def sliding_window(picture, stepsize, windowsize):
 
 def search_windows(picture, ourmodel):
     on_windows = []  # list to receive positive detection windows
-    best = 0
-    (xmax, ymax) = (0, 0)
+    best_prediction = 0
+    (xbest_pre, ybest_pre) = (0, 0)
     for (x, y, window) in sliding_window(picture, stepSize=8, windowSize=(winW, winH)):
         if window.shape[0] != winH or window.shape[1] != winW:
             continue
@@ -85,18 +85,18 @@ def search_windows(picture, ourmodel):
                                        hist_feat=hist_feat, hog_feat=hog_feat)
 
         feature = np.reshape(feature, (sizex, sizey))
-        feature = np.array([feature]).reshape(-1, sizex, sizey, 1)  # Scale extracted features to be fed to classifier
-        prediction = ourmodel.predict(feature)  # Predict using your model
+        feature = np.array([feature]).reshape(-1, sizex, sizey, 1)  # Scale extracted features to be fed to the model
+        prediction = ourmodel.predict(feature)  # Predict using our model
         print(prediction)
 
         if prediction[0][0] > prediction[0][1]:
-            if prediction[0][0] > best:
-                best = prediction[0][0]
-                # (xmax,ymax) = (x,y)
+            if prediction[0][0] > best_prediction:
+                best_prediction = prediction[0][0]
+                # (xbest_pre,ybest_pre) = (x,y)
             on_windows.append((x, y))
             print("found")
 
-    print('best prediction = ', max)
+    print('best prediction = ', best_prediction)
     # on_windows.append((xmax,ymax))
     return on_windows
 

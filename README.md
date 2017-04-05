@@ -1,4 +1,4 @@
-#parking sign detection with deep learning
+#parking sign detection with deep learning using convolutionnal neural networks with tflearn
 
 create_features.py: contain the code to load data from the hard drive and extract feature from them. Train Data et Test Data                       will be saved respectively in new_train_data.npy and test_data.npy
 

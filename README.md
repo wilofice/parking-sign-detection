@@ -17,12 +17,14 @@ The model have been tested on "input1.jpg", "input2.jpg", "input3.jpg". The resu
 
 #TO TEST THE CODE
 
-No need to load all the data and  train the model. The model that I have trained is already there and save in the file "parkingsign-0.001-2conv-basic.model.meta".
+No need to load all the data and  train the model. 
+The model that I have trained is already there and save in the file "parkingsign-0.001-2conv-basic.model.meta".
 So to test the code, just run test_modelv1.py. Don't forget to change the location of the image you will be using to test. 
 
 #TO REBUILD EVERYTHING FROM ZERO
 
--First grab training data. For that, uncomment the last line of grab_data.py in order to call the function get_train_data() and run the code. After that, recomment this line. 
+-First grab training data. For that, uncomment the last line of grab_data.py in order to call the function get_train_data() and run the code. After that, recomment this line (in order to not load all the data when we will be exporting the extract_features_for_test_data() function in the file test_model-v2.py)
+(Normally the file new_train_data.npy should be in the repository but it was to heavy, so I decided to not download it)
 
 -Secondly, train the model by running train_model.py
 

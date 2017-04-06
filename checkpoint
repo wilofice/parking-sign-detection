@@ -1,2 +1,2 @@
-model_checkpoint_path: "/home/genereux/PycharmProjects/signsp/parkingsign-0.001-2conv-basic.model"
-all_model_checkpoint_paths: "/home/genereux/PycharmProjects/signsp/parkingsign-0.001-2conv-basic.model"
+model_checkpoint_path: "/home/genereux/PycharmProjects/parkingSignDetection/parkingsign-0.001-2conv-basic.model"
+all_model_checkpoint_paths: "/home/genereux/PycharmProjects/parkingSignDetection/parkingsign-0.001-2conv-basic.model"

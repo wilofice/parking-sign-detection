@@ -102,7 +102,7 @@ def search_windows(picture, ourmodel):
     return on_windows
 
 
-image = cv2.imread('imagetest2.jpg')
+image = cv2.imread('input3.jpg')
 image_copy = np.copy(image)
 
 windows = search_windows(image, model)	

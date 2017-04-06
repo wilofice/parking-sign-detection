@@ -99,11 +99,12 @@ def search_windows(picture, ourmodel):
             print("found")
 
     print('best prediction = ', best_prediction)
-    on_windows.append((xbest_pre,ybest_pre, best_prediction))
+    if best_prediction > 0.5 :
+    	on_windows.append((xbest_pre,ybest_pre, best_prediction))
     return on_windows
 
 
-image = cv2.imread('imagetest1.jpg')
+image = cv2.imread('input3.jpg')
 image_copy = np.copy(image)
 
 windows = search_windows(image, model)	

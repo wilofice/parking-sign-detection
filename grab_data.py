@@ -196,18 +196,18 @@ def get_train_data():
     np.save('new_train_data.npy', new_train_data)
 
 
-def get_test_data():
+def get_test_data():  # not used. Can be useful if we want to test on all the image test contained in residential/img 
     for img in tqdm(os.listdir(TEST_DIR)):
         path = os.path.join(TEST_DIR, img)
         label = img
         img = cv2.imread(path)
-        test_data.append([img, np.array(label)])
+        test_data.append([img, np.array(label)])  # the label of each image is simply its name in order to be able to find the original image while testing
     shuffle(test_data)
     np.save('test_data.npy', test_data)
 
 
 # get_train_data()
-# get_test_data()
+
 
 
 
